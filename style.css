@@ -1,0 +1,833 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #120812;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.pantalla,
+.seccion {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* =========================
+   INICIO
+========================= */
+
+.inicio {
+    position: relative;
+
+    background:
+        radial-gradient(circle at top, #5c174d, transparent 45%),
+        linear-gradient(135deg, #120812, #2b0d25, #160914);
+}
+
+.contenido,
+.contenido-inicio {
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+}
+
+.pequeno,
+.subtitulo {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #f7b8d9;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(35px, 7vw, 70px);
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: clamp(30px, 6vw, 50px);
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+.contador {
+    font-size: clamp(80px, 15vw, 150px);
+    font-weight: bold;
+
+    text-shadow:
+        0 0 30px rgba(255, 140, 210, 0.8);
+
+    margin: 20px 0;
+}
+
+.mensaje-contador {
+    font-size: 18px;
+    color: #f4c9df;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.boton {
+    border: none;
+
+    background:
+        linear-gradient(135deg, #ff72b6, #c72c75);
+
+    color: white;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    font-size: 18px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    margin-top: 35px;
+
+    box-shadow:
+        0 10px 30px rgba(255, 73, 157, 0.35);
+
+    transition: 0.3s;
+}
+
+.boton:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 15px 40px rgba(255, 73, 157, 0.5);
+}
+
+.boton:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta-seccion {
+    background:
+        linear-gradient(180deg, #2b0d25, #4a163e);
+
+    padding: 80px 20px;
+}
+
+.sobre {
+    position: relative;
+
+    width: min(90vw, 600px);
+
+    height: 380px;
+
+    margin: 50px auto 20px;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+}
+
+.sobre::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #9e4269;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.tapa {
+    position: absolute;
+
+    z-index: 4;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 55%;
+
+    background: #d66a99;
+
+    clip-path:
+        polygon(0 0, 100% 0, 50% 100%);
+
+    transform-origin: top;
+
+    transition: 1s;
+}
+
+.carta {
+    position: absolute;
+
+    z-index: 2;
+
+    width: 90%;
+    height: 85%;
+
+    left: 5%;
+    top: 8%;
+
+    background: #fff8fc;
+
+    color: #472336;
+
+    padding: 30px;
+
+    border-radius: 5px;
+
+    overflow-y: auto;
+
+    transition: 1s;
+
+    text-align: left;
+}
+
+.carta h3 {
+    color: #7d294f;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.carta p {
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+.firma {
+    text-align: right;
+
+    font-style: italic;
+}
+
+.sobre.abierta .tapa {
+    transform: rotateX(180deg);
+}
+
+.sobre.abierta .carta {
+    transform: translateY(-70px);
+}
+
+.indicacion {
+    color: #ffd1e5;
+
+    font-size: 17px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   FOTOS
+========================= */
+
+.fotos-seccion {
+    background:
+        radial-gradient(
+            circle at center,
+            #641b52,
+            transparent 55%
+        ),
+        #180b16;
+
+    padding: 90px 20px;
+}
+
+.texto-fotos {
+    color: #e9bfd6;
+
+    font-size: 18px;
+
+    margin-bottom: 45px;
+}
+
+
+/* GALERÍA */
+
+.galeria {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+/* TARJETA */
+
+.foto-card {
+    position: relative;
+
+    height: 380px;
+
+    background: #fff;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+
+    transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+}
+
+.foto-card:hover {
+    transform:
+        translateY(-10px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.55);
+}
+
+.foto-card:nth-child(2):hover {
+    transform:
+        translateY(-10px)
+        rotate(1deg);
+}
+
+
+/* IMAGEN */
+
+.foto-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 4px;
+
+    display: block;
+}
+
+
+/* CORAZÓN SOBRE FOTO */
+
+.foto-corazon {
+    position: absolute;
+
+    right: 18px;
+    bottom: 18px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s;
+}
+
+.foto-card:hover .foto-corazon {
+    transform: scale(1.15);
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-foto {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(10, 2, 9, 0.82);
+
+    backdrop-filter: blur(8px);
+
+    animation:
+        aparecerModal 0.4s ease;
+}
+
+.modal-contenido {
+    position: relative;
+
+    width: min(90%, 600px);
+
+    padding: 55px 40px 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fc,
+            #ffe5f1
+        );
+
+    color: #57253d;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.6);
+
+    animation:
+        aparecerMensaje 0.5s ease;
+}
+
+
+/* BOTÓN CERRAR */
+
+.cerrar-modal {
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f3b4ce;
+
+    color: #682341;
+
+    font-size: 30px;
+
+    line-height: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.cerrar-modal:hover {
+    transform: rotate(90deg) scale(1.1);
+
+    background: #e88bb3;
+}
+
+
+/* CORAZÓN DEL MODAL */
+
+.corazon-modal {
+    font-size: 50px;
+
+    margin-bottom: 20px;
+
+    animation:
+        latido 1.2s infinite;
+}
+
+
+/* MENSAJE */
+
+.mensaje-foto {
+    font-size: 21px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-seccion {
+    background:
+        radial-gradient(
+            circle at center,
+            #5b174b,
+            transparent 50%
+        ),
+        #130914;
+
+    padding: 80px 20px;
+}
+
+.texto-video {
+    color: #e9bfd6;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+.video-contenedor {
+    width: 90%;
+
+    max-width: 500px;
+
+    margin: 30px auto;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #000;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.video-contenedor video {
+    display: block;
+
+    width: 100%;
+
+    max-height: 500px;
+
+    object-fit: contain;
+
+    background: #000;
+}
+
+.final {
+    font-size: 22px;
+
+    margin-top: 30px;
+
+    color: #ffd2e7;
+}
+
+.final-pequeno {
+    margin-top: 15px;
+
+    color: #f5b8d3;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   OCULTO / ANIMACIONES
+========================= */
+
+.oculto {
+    display: none;
+}
+
+.aparecer {
+    animation:
+        aparecer 1.2s ease forwards;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+@keyframes aparecerModal {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes aparecerMensaje {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.8)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+@keyframes latido {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   CORAZONES FLOTANTES
+========================= */
+
+.corazon {
+    position: fixed;
+
+    bottom: -30px;
+
+    font-size: 20px;
+
+    animation:
+        subir 6s linear forwards;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+@keyframes subir {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    .galeria {
+        grid-template-columns: 1fr;
+
+        max-width: 380px;
+    }
+
+    .foto-card {
+        height: 450px;
+    }
+
+}
+
+
+/* =========================
+   CELULAR PEQUEÑO
+========================= */
+
+@media (max-width: 600px) {
+
+    .pantalla,
+    .seccion {
+        min-height: 100vh;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .pequeno,
+    .subtitulo {
+        font-size: 15px;
+    }
+
+    .sobre {
+        width: 92vw;
+
+        height: 430px;
+
+        margin-top: 40px;
+    }
+
+    .carta {
+        padding: 22px;
+
+        width: 90%;
+
+        left: 5%;
+    }
+
+    .carta h3 {
+        font-size: 21px;
+    }
+
+    .carta p {
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    .boton {
+        font-size: 16px;
+
+        padding: 14px 24px;
+    }
+
+    .video-contenedor {
+        width: 90%;
+
+        max-width: 380px;
+
+        border-radius: 15px;
+    }
+
+    .video-contenedor video {
+        max-height: 500px;
+    }
+
+    .final {
+        font-size: 18px;
+    }
+
+    .modal-contenido {
+        padding: 50px 25px 35px;
+    }
+
+    .mensaje-foto {
+        font-size: 18px;
+
+        line-height: 1.7;
+    }
+
+}
+
+
+/* =========================
+   CELULAR MUY PEQUEÑO
+========================= */
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .sobre {
+        height: 400px;
+    }
+
+    .carta {
+        padding: 18px;
+    }
+
+    .carta p {
+        font-size: 14px;
+    }
+
+    .video-contenedor {
+        width: 92%;
+    }
+
+    .foto-card {
+        height: 400px;
+    }
+
+}

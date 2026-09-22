@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para el amor de mi vida ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- INICIO -->
+    <section id="inicio" class="pantalla inicio">
+        <div class="contenido-inicio">
+
+            <p class="pequeno">Tengo algo especial para ti...</p>
+
+            <h1>❤️ Una sorpresa para ti ❤️</h1>
+
+            <div id="contador" class="contador">10</div>
+
+            <p id="mensajeContador" class="mensaje-contador">
+                Espera un poquito (chimositaaa)...
+            </p>
+
+            <button id="btnComenzar" class="boton oculto">
+                💗 Comenzar
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- CARTA -->
+    <section id="cartaSeccion" class="seccion carta-seccion oculto">
+
+        <div class="contenido">
+
+            <p class="subtitulo">Detente tengo algo que decirte...</p>
+
+            <h2>💌 Una pequeña carta para ti</h2>
+
+            <div id="sobre" class="sobre">
+
+                <div class="tapa"></div>
+
+                <div class="carta">
+
+                    <h3>Feliz cumpleaños, mi amor ❤️</h3>
+
+                    <p>
+                        Hoy es un día muy especial porque celebramos
+                        a una persona que significa muchísimo para mí.
+                    </p>
+
+                    <p>
+                        Quiero agradecerte por cada momento que hemos
+                        compartido, por las risas, los abrazos, las
+                        conversaciones y por todos esos pequeños momentos
+                        que hacen que estar contigo sea algo especial.
+                    </p>
+
+                    <p>
+                        Espero que este nuevo año de tu vida esté lleno
+                        de cosas bonitas, sueños cumplidos y muchísimas
+                        razones para sonreír.
+                    </p>
+
+                    <p>
+                        Te quiero muchísimo y espero poder seguir creando
+                        muchos recuerdos contigo, tus 22 añotes. ❤️
+                    </p>
+
+                    <p class="firma">
+                        Con mucho amor,<br>
+                        alguien que te quiere  y ama muchísimo ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p id="indicacionCarta" class="indicacion">
+                💌 Haz clic en la carta
+            </p>
+
+            <button id="btnFotos" class="boton oculto">
+                📸 Ver nuestros momentos
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOTOS -->
+    <section id="fotosSeccion" class="seccion fotos-seccion oculto">
+
+        <div class="contenido">
+
+            <p class="subtitulo">
+                Algunos recuerdos contigo... ❤️
+            </p>
+
+            <h2>Nuestros momentos 📸</h2>
+
+            <p class="texto-fotos">
+                Toca cada foto, mi amor. Cada una guarda unas palabras
+                que quiero dedicarte. ❤️
+            </p>
+
+
+            <div class="galeria">
+
+                <!-- FOTO 1 -->
+                <div class="foto-card" data-mensaje="Mi Azucena, eres como una flor que llegó a mi vida para hacerla mucho más bonita. No importa cuántas flores existan en el mundo, para mí siempre habrá una que será la más especial: tú, mi amor. 🌸❤️">
+
+                    <img src="imagenes/foto1.jpg" alt="Nuestro recuerdo">
+
+                    <div class="foto-corazon">
+                        ❤️
+                    </div>
+
+                </div>
+
+
+                <!-- FOTO 2 -->
+                <div class="foto-card" data-mensaje="Mi amor, hay momentos que quisiera guardar para siempre, y muchos de ellos tienen algo en común: tú. Gracias por hacer que hasta los días normales se conviertan en recuerdos que quiero conservar. 💕">
+
+                    <img src="imagenes/foto2.jpg" alt="Nuestro recuerdo">
+
+                    <div class="foto-corazon">
+                        ❤️
+                    </div>
+
+                </div>
+
+
+                <!-- FOTO 3 -->
+                <div class="foto-card" data-mensaje="Si algún día me preguntaran qué es lo más bonito que me ha pasado, tendría muchas cosas que decir, pero entre ellas estaría haberte conocido. Feliz cumpleaños mi mujercita. Espero seguir llenando nuestra historia de momentos juntos. 💖">
+
+                    <img src="imagenes/foto3.jpg" alt="Nuestro recuerdo">
+
+                    <div class="foto-corazon">
+                        ❤️
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button id="btnSorpresa" class="boton">
+                🎁 Tengo otra sorpresa para ti
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- VENTANA DEL MENSAJE -->
+    <div id="modalFoto" class="modal-foto oculto">
+
+        <div class="modal-contenido">
+
+            <button id="cerrarModal" class="cerrar-modal">
+                ×
+            </button>
+
+            <div class="corazon-modal">
+                ❤️
+            </div>
+
+            <p id="mensajeFoto" class="mensaje-foto"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- VIDEO -->
+    <section id="videoSeccion" class="seccion video-seccion oculto">
+
+        <div class="contenido">
+
+            <p class="subtitulo">
+                Y esto todavía no termina... ❤️
+            </p>
+
+            <h2>🎥 Nuestros momentos</h2>
+
+            <p class="texto-video">
+                Porque algunos momentos merecen quedarse para siempre.
+            </p>
+
+            <div class="video-contenedor">
+
+                <video id="video" controls playsinline preload="metadata">
+
+                    <source
+                        src="video/nuestro-video.mp4"
+                        type="video/mp4"
+                    >
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+            </div>
+
+            <p class="final">
+                Gracias por formar parte de mi vida. ❤️
+            </p>
+
+            <p class="final-pequeno">
+                Feliz cumpleaños, mi amor amorcito. 🌸❤️
+            </p>
+
+            <button id="btnReiniciar" class="boton">
+                ❤️ Volver a empezar
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
